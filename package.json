@@ -1,0 +1,31 @@
+{
+  "name": "web-map",
+  "version": "1.0.0",
+  "description": "Ejemplo de una aplicación web de mapas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CJNarvaez/web-map.git"
+  },
+  "keywords": [
+    "AngularJS",
+    "web-map",
+    "bootstrap"
+  ],
+  "author": "Cristhian Narváez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CJNarvaez/web-map/issues"
+  },
+  "homepage": "https://github.com/CJNarvaez/web-map",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-connect": "^3.2.2",
+    "gulp-pug": "^2.0.0",
+    "gulp-stylus": "^2.3.1",
+    "gulp-uglify": "^1.5.3"
+  }
+}
