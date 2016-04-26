@@ -8,11 +8,6 @@ angular.module('MapaApp', ['ui-leaflet'])
     },
     layers: {
       baselayers: {
-        osm: {
-          name: 'OpenStreetMap',
-          url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          type: 'xyz',
-        },
         googleRoadmap: {
           name: 'Google Streets',
           layerType: 'ROADMAP',
@@ -27,6 +22,11 @@ angular.module('MapaApp', ['ui-leaflet'])
           name: 'Google Hybrid',
           layerType: 'HYBRID',
           type: 'google',
+        },
+        osm: {
+          name: 'OpenStreetMap',
+          url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          type: 'xyz',
         },
       },
     }
