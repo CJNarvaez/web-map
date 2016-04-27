@@ -27,7 +27,7 @@ gulp.task('css',function() {
 
 gulp.task('js', function() {
   gulp.src(paths.js)
-  //  .pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./app/js'))
     .pipe(connect.reload());
 });
