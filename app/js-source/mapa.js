@@ -1,4 +1,4 @@
-angular.module('MapaApp', ['ui-leaflet'])
+angular.module('MapaApp', ['ui-leaflet', 'ngAnimate', 'ngTouch', 'ui.bootstrap'])
 .controller('MapaController', ['$scope', '$http', function($scope, $http) {
 
   // selector de layers

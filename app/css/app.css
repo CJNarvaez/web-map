@@ -6,12 +6,8 @@
   left: 0px;
 }
 .info {
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
   color: #fff;
   background-color: #397e8c;
   opacity: 0.8;
-  padding: 10px;
   border-radius: 5px;
 }
