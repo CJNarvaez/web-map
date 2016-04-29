@@ -1,5 +1,9 @@
-# web-map
-Ejemplo de una aplicación web de mapas,
-Aplicación responsive,
-uso de Leaflet para análisis espacial,
-con AngularJS y Bootstrap 3
+# Web-Map
+
+Ejemplo de una aplicación web de mapas.<br />
+
+- Bootstrap 3 para una web responsive.
+- Leaflet para análisis espacial.
+- AngularJS.
+
+### [Ejemplo online](http://cjnarvaez.github.io/web-map/)
