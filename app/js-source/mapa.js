@@ -1,5 +1,8 @@
-angular.module('MapaApp', ['ui-leaflet', 'ngAnimate', 'ngTouch', 'ui.bootstrap', 'mapaComponent'])
+angular.module('MapaApp', ['ui-leaflet', 'ngAnimate', 'ngTouch', 'ui.bootstrap', 'mapaComponent', 'detalleComponent'])
 .controller('MapaController', ['$scope', '$http', function($scope, $http) {
+  $scope.propiedades = {
+    NOM_MUN: '',
+  }
 
   // selector de layers
   angular.extend($scope, {
@@ -10,11 +13,6 @@ angular.module('MapaApp', ['ui-leaflet', 'ngAnimate', 'ngTouch', 'ui.bootstrap',
     },
     layers: {
       baselayers: {
-        osm: {
-          name: 'OpenStreetMap',
-          url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-          type: 'xyz',
-        },
         googleRoadmap: {
           name: 'Google Streets',
           layerType: 'ROADMAP',
@@ -29,6 +27,11 @@ angular.module('MapaApp', ['ui-leaflet', 'ngAnimate', 'ngTouch', 'ui.bootstrap',
           name: 'Google Hybrid',
           layerType: 'HYBRID',
           type: 'google',
+        },
+        osm: {
+          name: 'OpenStreetMap',
+          url: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          type: 'xyz',
         },
       },
     }
@@ -80,5 +83,37 @@ angular.module('MapaApp', ['ui-leaflet', 'ngAnimate', 'ngTouch', 'ui.bootstrap',
     };
     country = country.feature;  //console.log(country.properties);
     $scope.propiedades = country.properties;
+    console.log(country.properties.NOM_MUN);
+
+    var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1j_xtWMGX0lZCYU_XgONxCUPws5gc0LNAtFGxeUQfC10/edit?usp=sharing');
+    query.setQuery('select A, C, D where A = "'+ country.properties.NOM_MUN + '"');
+    query.send(handleQueryResponse);
+
+    function handleQueryResponse(response) {
+      if (response.isError()) {
+          alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+          return;
+      }
+      // Set chart options
+      var options = {
+        'legend': 'none',
+        'title': 'Habitantes por Municipio por Sexo'
+      };
+      var data = response.getDataTable();
+      var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
+      chart.draw(data, options);
+    }
+
   };
+
+  $scope.$on('prueba', function(ev, msg){
+    //console.log($scope);
+    cambia(msg);
+  });
+  function cambia(msg){
+    propiedades = {
+      NOM_MUN: msg,
+    };
+    $scope.propiedades = propiedades;
+  }
 }]);

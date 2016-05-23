@@ -1,7 +1,5 @@
-angular.module('mapaComponent', [])
-.controller('mapaController', ['$scope', function($scope) {
-  // Load the Visualization API and the corechart package.
-  google.charts.load('current', {'packages': ['corechart']});
+angular.module('detalleComponent', [])
+.controller('detalleController', ['$scope', function($scope) {
 
   // Set a callback to run when the Google Visualization API is loaded.
   google.charts.setOnLoadCallback(drawChart);
@@ -11,7 +9,7 @@ angular.module('mapaComponent', [])
   // draws it.
   function drawChart() {
     var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1j_xtWMGX0lZCYU_XgONxCUPws5gc0LNAtFGxeUQfC10/edit?usp=sharing');
-    query.setQuery('select A, B');
+    query.setQuery('select A, C, D');
     query.send(handleQueryResponse);
 /*
     // Create the data table.
@@ -41,12 +39,12 @@ angular.module('mapaComponent', [])
 
     // Set chart options
     var options = {
-      'legend': 'none',
+      'legend': 'bottom',
       'title': 'Habitantes por Municipio'
     };
 
     var data = response.getDataTable();
-    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));
     chart.draw(data, options);
 
     // Every time the table fires the "select" event, it should call your
@@ -77,7 +75,7 @@ angular.module('mapaComponent', [])
 
   }
 }])
-.component('mapaComponent', {
-  templateUrl: './js/components/mapa-component/mapa-component.html',
-  controller: 'mapaController'
+.component('detalleComponent', {
+  templateUrl: './js/components/detalle-component/detalle-component.html',
+  controller: 'detalleController'
 });
