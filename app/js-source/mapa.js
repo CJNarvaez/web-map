@@ -96,8 +96,9 @@ angular.module('MapaApp', ['ui-leaflet', 'ngAnimate', 'ngTouch', 'ui.bootstrap',
       }
       // Set chart options
       var options = {
-        'legend': 'none',
-        'title': 'Habitantes por Municipio por Sexo'
+        legend: 'bottom',
+        title: 'Habitantes por Municipio por Sexo',
+        vAxis: { minValue: 0 }
       };
       var data = response.getDataTable();
       var chart = new google.visualization.ColumnChart(document.getElementById('chart_div2'));

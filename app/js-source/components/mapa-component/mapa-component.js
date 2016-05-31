@@ -41,8 +41,9 @@ angular.module('mapaComponent', [])
 
     // Set chart options
     var options = {
-      'legend': 'none',
-      'title': 'Habitantes por Municipio'
+      legend: 'none',
+      title: 'Total de Habitantes por Municipio',
+      vAxis: { minValue: 0 }
     };
 
     var data = response.getDataTable();

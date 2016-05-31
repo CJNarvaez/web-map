@@ -39,8 +39,9 @@ angular.module('detalleComponent', [])
 
     // Set chart options
     var options = {
-      'legend': 'bottom',
-      'title': 'Habitantes por Municipio'
+      legend: 'bottom',
+      title: 'Habitantes por Municipio',
+      vAxis: { minValue: 0 }
     };
 
     var data = response.getDataTable();
