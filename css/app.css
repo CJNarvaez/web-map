@@ -1,16 +1,24 @@
 .mapa {
   width: 100%;
-  height: 100%;
-  position: absolute !important;
-  top: 0px;
-  left: 0px;
+  height: 480px;
+  border: 5px solid;
 }
 .info {
   color: #fff;
-  background-color: #397e8c;
-  opacity: 0.8;
-  border-radius: 5px;
+  background-color: #fcfff5;
+}
+h1 {
+  color: #193441;
+  font-weight: bolder;
+}
+body {
+  background-color: #fcfff5;
+  color: #3e606f;
 }
 .chart {
-  opacity: 0.8 !important;
+  border: 5px solid;
+}
+.jumbotron {
+  background-image: url("http://lorempixel.com/g/640/480/people/");
+  color: #3e606f;
 }
